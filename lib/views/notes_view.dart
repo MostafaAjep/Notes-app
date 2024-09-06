@@ -11,6 +11,8 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+              isScrollControlled: true,
+              useSafeArea: true,
               //if you want to change the shape change it here
               // shape: const RoundedRectangleBorder(
               //   borderRadius: BorderRadius.vertical(top: Radius.circular(22))),
