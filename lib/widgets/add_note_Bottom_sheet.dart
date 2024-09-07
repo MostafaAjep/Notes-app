@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'custom_button.dart';
 import 'custom_text_field.dart';
 
 class ShowNoteBottomSheet extends StatelessWidget {
@@ -14,6 +14,8 @@ class ShowNoteBottomSheet extends StatelessWidget {
           CustomTextField(hint: 'Title'),
           SizedBox(height: 16),
           CustomTextField(hint: 'Content', maxLines: 5),
+          Spacer(),
+          CustomButton(),
         ],
       ),
     );
