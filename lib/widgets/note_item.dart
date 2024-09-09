@@ -46,10 +46,9 @@ class NoteItem extends StatelessWidget {
                   onPressed: () {
                     note.delete();
                     BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-                    const ScaffoldMessenger(
-                      child: SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
                         content: Text('Note Deleted'),
-                        backgroundColor: Colors.red,
                       ),
                     );
                   },
