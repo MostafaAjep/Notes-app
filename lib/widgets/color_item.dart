@@ -8,16 +8,22 @@ class ColorItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isActive
-        ? CircleAvatar(
-            backgroundColor: color,
-            radius: 36,
-            child: const Icon(
-              Icons.check,
-              color: Colors.white,
-            ))
-        : CircleAvatar(
-            radius: 36,
-            backgroundColor: color,
+        ? Padding(
+            padding: const EdgeInsets.only(right: 6),
+            child: CircleAvatar(
+                backgroundColor: color,
+                radius: 34,
+                child: const Icon(
+                  Icons.check,
+                  color: Colors.white,
+                )),
+          )
+        : Padding(
+            padding: const EdgeInsets.only(right: 6),
+            child: CircleAvatar(
+              radius: 34,
+              backgroundColor: color,
+            ),
           );
   }
 }

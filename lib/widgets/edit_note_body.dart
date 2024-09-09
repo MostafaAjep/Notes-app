@@ -5,6 +5,7 @@ import 'package:notes_app/models/note_model.dart';
 import '../cubits/notes_cubit/notes_cubit.dart';
 import 'custom_app_bar.dart';
 import 'custom_text_field.dart';
+import 'edit_note_colors_list.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key, required this.note});
@@ -43,10 +44,13 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           const SizedBox(height: 16),
           CustomTextField(
             hint: widget.note.subtitle,
-            maxLines: 5,
+            maxLines: 4,
             onChanged: (p0) {
               content = p0;
             },
+          ),
+          EditNoteColorsList(
+            note: widget.note,
           ),
         ],
       ),
