@@ -2,8 +2,24 @@ import 'package:flutter/material.dart';
 
 import 'color_item.dart';
 
-class ColorsListView extends StatelessWidget {
-  const ColorsListView({super.key});
+class ColorsListView extends StatefulWidget {
+  const ColorsListView({super.key, required this.isActive});
+  final bool isActive;
+
+  @override
+  State<ColorsListView> createState() => _ColorsListViewState();
+}
+
+class _ColorsListViewState extends State<ColorsListView> {
+  int currentIndex = 0;
+  List<Color> colors = [
+    Colors.amber,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.grey,
+    Colors.pink,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +28,17 @@ class ColorsListView extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 18),
         child: ListView.builder(
-          itemBuilder: (context, index) => const ColorItem(),
-          itemCount: 10,
+          itemBuilder: (context, index) => GestureDetector(
+            onTap: () {
+              currentIndex = index;
+              setState(() {});
+            },
+            child: ColorItem(
+              isActive: currentIndex == index,
+              color: colors[index],
+            ),
+          ),
+          itemCount: colors.length,
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
         ),
