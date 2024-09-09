@@ -80,6 +80,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Note added successfully'),
+          duration: Duration(milliseconds: 1000),
         ),
       );
     } else {

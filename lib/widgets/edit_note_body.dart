@@ -32,6 +32,12 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               widget.note.save();
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
               Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  duration: Duration(milliseconds: 1000),
+                  content: Text('Note Updated'),
+                ),
+              );
             },
           ),
           const SizedBox(height: 16),

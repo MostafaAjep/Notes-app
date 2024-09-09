@@ -48,6 +48,7 @@ class NoteItem extends StatelessWidget {
                     BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
+                        duration: Duration(milliseconds: 1000),
                         content: Text('Note Deleted'),
                       ),
                     );
